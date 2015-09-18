@@ -11,3 +11,17 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+docker-shellinit() {
+  eval "$(boot2docker shellinit)"
+}
+
+pyvenv() {
+  eval "source venv/bin/activate"
+}
+
+export GOPATH="/Users/tulich/dev/go"
+export PATH=$PATH:$GOPATH/bin
+
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

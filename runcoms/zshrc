@@ -12,12 +12,14 @@ fi
 
 # Customize to your needs...
 
-docker-shellinit() {
-  eval "$(boot2docker shellinit)"
-}
-
 pyvenv() {
   eval "source venv/bin/activate"
+}
+
+alias gpr='open "$(git config --get "remote.origin.url" | sed -En "s/(git|https?)(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\4\/\5/p")/compare/$(git-branch-current 2> /dev/null)?expand=1"'
+
+colget () {
+  awk "{ print \$$1 }"
 }
 
 export GOPATH="/Users/tulich/dev/go"
